@@ -19,17 +19,16 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         .profile-card {
             background: #ffffff;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 450px;
+            max-width: 520px;
             width: 100%;
             overflow: hidden;
-            text-align: center;
             transition: transform 0.3s;
         }
 
@@ -39,134 +38,360 @@
 
         .header-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            height: 120px;
+            height: 140px;
         }
 
         .avatar-container {
-            margin-top: -60px;
+            margin-top: -70px;
             position: relative;
+            text-align: center;
         }
 
         .avatar {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             border: 5px solid #ffffff;
             object-fit: cover;
             background-color: #ddd;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .profile-info {
-            padding: 25px;
+            padding: 30px 35px;
+        }
+
+        .name-wrapper {
+            text-align: center;
+            margin-bottom: 25px;
         }
 
         .name {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 26px;
+            font-weight: 700;
             color: #2d3748;
             margin-bottom: 5px;
         }
 
         .job-title {
             font-size: 16px;
-            color: #718096;
-            font-weight: 5px;
-            margin-bottom: 20px;
+            color: #764ba2;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
         }
 
         .bio {
             font-size: 14px;
             color: #4a5568;
             line-height: 1.6;
-            margin-bottom: 25px;
+            text-align: center;
             padding: 0 10px;
+        }
+
+        .section-title {
+            font-size: 15px;
+            text-align: left;
+            color: #2d3748;
+            margin: 25px 0 15px 0;
+            font-weight: bold;
+            border-left: 4px solid #764ba2;
+            padding-left: 8px;
         }
 
         .details-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 25px;
             text-align: left;
             font-size: 14px;
         }
 
         .details-table td {
-            padding: 10px;
+            padding: 10px 5px;
             border-bottom: 1px solid #edf2f7;
+        }
+
+        .details-table tr:last-child td {
+            border-bottom: none;
         }
 
         .details-table td.label {
             font-weight: bold;
             color: #4a5568;
-            width: 35%;
+            width: 30%;
         }
 
         .details-table td.value {
             color: #718096;
         }
 
-        .social-links a {
-            display: inline-block;
-            margin: 0 10px;
-            color: #764ba2;
-            text-decoration: none;
+        /* ส่วนประวัติการศึกษา (Timeline) */
+        .education-timeline {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid #edf2f7;
+            margin-left: 5px;
+        }
+
+        .edu-item {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #764ba2;
+            border: 2px solid #fff;
+        }
+
+        .edu-year {
+            font-size: 12px;
             font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 2px;
+        }
+
+        .edu-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .edu-school {
+            font-size: 13px;
+            color: #718096;
+        }
+
+        /* ส่วน Tags (วิชาเรียน & เกม) */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #f0f4f8;
+            color: #4a5568;
+            font-size: 13px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tag:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .tag.game-tag {
+            background: #fff5f5;
+            color: #e53e3e;
+        }
+
+        .tag.game-tag:hover {
+            background: #e53e3e;
+            color: white;
+        }
+
+        /* ส่วนทักษะความสามารถ (Skills) */
+        .skills-container {
+            text-align: left;
+        }
+
+        .skill-item {
+            margin-bottom: 12px;
+        }
+
+        .skill-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-name {
+            font-size: 13px;
+            color: #4a5568;
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-bar-bg {
+            background: #edf2f7;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        /* ลิงก์โซเชียลและปุ่มติดต่อ */
+        .social-links {
+            margin: 30px 0 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #718096;
+            text-decoration: none;
+            font-weight: 600;
             font-size: 14px;
             transition: color 0.2s;
+            padding: 6px 12px;
+            border-radius: 5px;
+            background: #f7fafc;
         }
 
         .social-links a:hover {
-            color: #667eea;
+            color: #764ba2;
+            background: #edf2f7;
+        }
+
+        .btn-contact {
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+            transition: opacity 0.2s;
+        }
+
+        .btn-contact:hover {
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
 
     <div class="profile-card">
-        <!-- ส่วนหัวพื้นหลังสีไล่ระดับ -->
         <div class="header-bg"></div>
         
-        <!-- รูปโปรไฟล์ -->
         <div class="avatar-container">
-            <!-- เปลี่ยน URL รูปภาพใน src เป็นรูปของคุณเองได้เลยครับ -->
             <img src="./6985.jpg" alt="Profile Picture" class="avatar">
         </div>
 
-        <!-- ข้อมูลส่วนตัว -->
         <div class="profile-info">
-            <h1 class="name">ณัฐพรรดิ คำจันทร์ดี</h1>
-            <p class="job-title">Web Developer & Designer</p>
-            
-            <p class="bio">
-                สวัสดีครับ! ผมเป็นนักศึกษามหาวิทยาลัยกาฬสินธุ์ ยินดีที่ได้รู้จักทุกคนครับ ชื่นชอบการเรียนรู้เทคโนโลยีใหม่ๆ และการดื่มนมเป็นชีวิตจิตใจ
-            </p>
+            <div class="name-wrapper">
+                <h1 class="name">ณัฐพรรดิ คำจันทร์ดี</h1>
+                <p class="job-title">Web Developer & Designer</p>
+                <p class="bio">
+                    สวัสดีครับ! ผมเป็นนักศึกษามหาวิทยาลัยกาฬสินธุ์ ชื่นชอบการเรียนรู้เทคโนโลยีใหม่ๆ พัฒนาเว็บไซต์ และการดื่มนมเป็นชีวิตจิตใจ ยินดีที่ได้ทำความรู้จักกับทุกคนครับ!
+                </p>
+            </div>
 
-            <!-- ตารางประวัติข้อมูล -->
+            <div class="section-title">ข้อมูลทั่วไป</div>
             <table class="details-table">
                 <tr>
                     <td class="label">อายุ:</td>
                     <td class="value">21 ปี</td>
                 </tr>
                 <tr>
-                    <td class="label">การศึกษา:</td>
-                    <td class="value">ปริญญาตรี วิทยาการคอมพิวเตอร์</td>
-                </tr>
-                <tr>
                     <td class="label">อีเมล:</td>
                     <td class="value">nooq181@gmail.com</td>
                 </tr>
-                <tr>
-                    <td class="label">ทักษะพื้นฐาน:</td>
-                    <td class="value">HTML, CSS, JavaScript, Vue.js</td>
-                </tr>
             </table>
 
-            <!-- ลิงก์ติดต่อช่องทางอื่น ๆ -->
+            <div class="section-title">ประวัติการศึกษา</div>
+            <div class="education-timeline">
+                <div class="edu-item">
+                    <div class="edu-year">ปัจจุบัน</div>
+                    <div class="edu-title">ปริญญาตรี วิทยาการคอมพิวเตอร์</div>
+                    <div class="edu-school">คณะวิทยาศาสตร์และเทคโนโลยีสุขภาพ มหาวิทยาลัยกาฬสินธุ์</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-year">มัธยมศึกษาตอนปลาย</div>
+                    <div class="edu-title">แผนการเรียน วิทย์ - คณิต</div>
+                    <div class="edu-school">โรงเรียนของคุณ (สามารถแก้ไขชื่อโรงเรียนได้ที่นี่)</div>
+                </div>
+            </div>
+
+            <div class="section-title">หลักสูตรและวิชาที่ศึกษา</div>
+            <div class="tags-container">
+                <span class="tag">Web Technology</span>
+                <span class="tag">Database System</span>
+                <span class="tag">Object-Oriented Programming (OOP)</span>
+                <span class="tag">Data Structures & Algorithms</span>
+                <span class="tag">UI/UX Design Basics</span>
+            </div>
+
+            <div class="section-title">ทักษะทางเทคนิค (Technical Skills)</div>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <div class="skill-name"><span>HTML / CSS</span><span>85%</span></div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>JavaScript</span><span>75%</span></div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>Vue.js</span><span>65%</span></div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 65%;"></div></div>
+                </div>
+            </div>
+
+            <div class="section-title">ทักษะการทำงาน (Professional Skills)</div>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <div class="skill-name"><span>ความเร็วในการพิมพ์สัมผัส (Fast Typing)</span><span>50+ WPM</span></div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%; background: linear-gradient(90deg, #48bb78, #38a169);"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>การแก้ไขปัญหา (Problem Solving)</span><span>ดีเยี่ยม</span></div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%; background: linear-gradient(90deg, #48bb78, #38a169);"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name"><span>การทำงานร่วมกันทีม (Teamwork)</span><span>ดีมาก</span></div>
+                    <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%; background: linear-gradient(90deg, #48bb78, #38a169);"></div></div>
+                </div>
+            </div>
+
+            <div class="section-title">งานอดิเรก & เกมที่ชอบเล่น 🎮</div>
+            <div class="tags-container">
+                <span class="tag game-tag">🍪 Cookie Run</span>
+                <span class="tag game-tag">⚔️ League of Legends (LoL)</span>
+                <span class="tag game-tag">🧱 Roblox</span>
+                <span class="tag game-tag">🔫 CS:GO / CS2</span>
+                <span class="tag game-tag">🎯 Valorant</span>
+                <span class="tag game-tag">🔮 Fate/Grand Order (FGO)</span>
+                <span class="tag game-tag">📐 Arknights</span>
+                <span class="tag game-tag">⚓ Azur Lane</span>
+                <span class="tag game-tag">🏫 Blue Archive</span>
+                <span class="tag game-tag">🐎 Uma Musume</span>
+                <span class="tag game-tag">🚌 Limbus Company</span>
+                <span class="tag game-tag">📖 Library of Ruina</span>
+                <span class="tag game-tag">👁️ Lobotomy Corporation</span>
+                <span class="tag game-tag">🎤 Kasane Teto (Vocaloid)</span>
+            </div>
+
             <div class="social-links">
                 <a href="#" target="_blank">Facebook</a>
-                <a href="#" target="_blank">GitHub</a>
+                <a href="https://github.com/nooq181-source" target="_blank">GitHub</a>
                 <a href="#" target="_blank">LinkedIn</a>
             </div>
+
+            <a href="mailto:nooq181@gmail.com" class="btn-contact">ติดต่อฉัน (Contact Me)</a>
         </div>
     </div>
 
